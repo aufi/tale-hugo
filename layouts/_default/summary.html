@@ -7,5 +7,12 @@
         <p>
             {{ if isset .Params "summary" }}{{ .Params.Summary | markdownify }}{{ else }}{{ .Summary }}{{ end }}
         </p>
+        {{ with .Params.tags }}
+        <p class="tags">
+          {{ range . }}
+            #{{ . }}
+          {{ end }}
+        </p>
+        {{ end }}
     </div>
 </a>
